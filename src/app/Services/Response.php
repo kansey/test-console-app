@@ -76,9 +76,9 @@ class Response
             }
 
             echo $this->getTab($level). "</ul>\n";
-            echo $this->getTab(  $level - 1). "</li>\n";
+            echo $this->getTab($level - 1) . "</li>\n";
         } else {
-            echo $this->getTab(  $level ). "</li>\n";
+            echo $this->getTab($level) . "</li>\n";
         }
     }
 
