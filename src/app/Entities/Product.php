@@ -2,6 +2,7 @@
 
 /**
  * Class Product
+ * Сущность Товара
  */
 class Product extends Entity
 {

@@ -4,7 +4,7 @@ require 'src/app/Entities/Entity.php';
 
 /**
  * Class Group
- * @package App\Entities
+ * Сущность Группы
  */
 class Group extends Entity
 {

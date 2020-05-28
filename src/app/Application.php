@@ -28,11 +28,6 @@ class Application
     protected $productRepository;
 
     /**
-     * @var Response
-     */
-    protected $response;
-
-    /**
      * Application constructor.
      */
     public function __construct()
@@ -40,7 +35,6 @@ class Application
         $this->parser = new FileParser();
         $this->groupRepository = new GroupRepository();
         $this->productRepository = new ProductRepository();
-        $this->response = new Response($this->groupRepository, $this->productRepository);
     }
 
     /**
@@ -63,7 +57,16 @@ class Application
         $this->groupRepository->load($dataGroups);
         $this->productRepository->load($dataProducts);
 
-        $response = $this->response->getResponse();
+        $this->sendResponse();
+    }
+
+    /**
+     * Печать сгенерированной html-структуры
+     */
+    protected function sendResponse()
+    {
+        $response = new Response;
+        $response($this->groupRepository, $this->productRepository);
     }
 }
 
